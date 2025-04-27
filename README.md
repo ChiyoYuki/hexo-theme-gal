@@ -32,11 +32,11 @@
 
 # 配置说明
 
-    git clone https://github.com/ZEROKISEKI/hexo-theme-gal.git themes/gal
+    git clone https://github.com/ChiyoYuki/hexo-theme-gal.git themes/gal
     
     or 
     
-    git clone https://github.com/ZEROKISEKI/hexo-theme-gal.git themes/gal --depth 1
+    git clone https://github.com/ChiyoYuki/hexo-theme-gal.git themes/gal --depth 1
 
 ## 使用该主题前要安装的东西:
 
