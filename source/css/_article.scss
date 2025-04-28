@@ -1,5 +1,5 @@
-@import "variables";
-@import "mixin";
+@use "variables";
+@use "mixin";
 
 #article, #article-archive, #article-tag, #article-tags, #article-categories, #article-category {
 
@@ -10,10 +10,10 @@
   }
 
   &.article-body {
-    background-color: $article-bg-color;
-    @include gal-box-shadow($article-box-shadow);
+    background-color: variables.$article-bg-color;
+    @include mixin.gal-box-shadow(variables.$article-box-shadow);
     &:hover {
-      @include gal-box-shadow($hover-box-shadow);
+      @include mixin.gal-box-shadow(variables.$hover-box-shadow);
     }
   }
 
@@ -24,12 +24,12 @@
       margin: 0 auto;
       text-align: center;
       > a {
-        color: $black2;
+        color: variables.$black2;
         text-decoration: none;
         &:hover {
-          color: $red;
+          color: variables.$red;
           text-decoration: none;
-          @include gal-transition($duration: .3s, $timing-function: ease);
+          @include mixin.gal-transition($duration: .3s, $timing-function: ease);
         }
       }
     }

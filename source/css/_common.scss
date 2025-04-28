@@ -1,9 +1,10 @@
-@import "../../libs/font-awesome/font-awesome";
-@import "variables";
-@import "mixin";
+@use "sass:meta";
+@use "../../libs/font-awesome/font-awesome";
+@use "variables";
+@use "mixin";
 
 ::selection{
-  background: $red;
+  background: variables.$red;
   color: white;
 }
 
@@ -12,9 +13,9 @@ html, body {
 }
 
 body {
-  font-family: $body-font;
-  font-size: $body-font-sz;
-  color: $body-color;
+  font-family: variables.$body-font;
+  font-size: variables.$body-font-sz;
+  color: variables.$body-color;
   // background-color: #000;
   cursor: url(../imgs/mouse1.cur), url(../imgs/mouse1.cur), auto;
   word-wrap: break-word;
@@ -26,24 +27,24 @@ body {
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
-  background-color: $scrollbar-bg-color;
+  background-color: variables.$scrollbar-bg-color;
 }
 
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: $scrollbar-box-shadow;
+  -webkit-box-shadow: variables.$scrollbar-box-shadow;
   border-radius: 10px;
-  background-color: $scrollbar-track-bg-color;
+  background-color: variables.$scrollbar-track-bg-color;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  -webkit-box-shadow: $scrollbar-box-shadow;
-  background-color: $scrollbar-thumb-bg-color;
+  -webkit-box-shadow: variables.$scrollbar-box-shadow;
+  background-color: variables.$scrollbar-thumb-bg-color;
 }
 
 a {
   cursor: url(../imgs/mouse2.cur), url(../imgs/mouse2.cur), auto;
-  color: $link-color;
+  color: variables.$link-color;
   text-decoration: none;
   &:hover {
     text-decoration: none;
@@ -85,7 +86,7 @@ ul {
 }
 
 .dropdown-menu {
-  background-color: $dropdown-menu-bg-color;
+  background-color: variables.$dropdown-menu-bg-color;
 }
 
 .dropdown-menu > li > a {
@@ -95,7 +96,7 @@ ul {
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   color: #fff;
-  background-color: $link-hover-bg-color;
+  background-color: variables.$link-hover-bg-color;
   text-decoration: none;
   transition: all 0.3s ease;
 }
@@ -106,27 +107,27 @@ ul {
 }
 
 .breadcrumb {
-  background-color: $breadcrumb-bg-color;
+  background-color: variables.$breadcrumb-bg-color;
 }
 
 .breadcrumb-gal {
-  background-color: $search-breadcrumb-bg-color;
-  @include gal-box-shadow($search-breadcrumb-box-shadow);
+  background-color: variables.$search-breadcrumb-bg-color;
+  @include mixin.gal-box-shadow(variables.$search-breadcrumb-box-shadow);
   margin-bottom: 40px;
 }
 
 .panel {
   border-radius: 4px;
-  background-color: $sidebar-panel-bg-color;
-  @include gal-box-shadow($sidebar-panel-box-shadow);
+  background-color: variables.$sidebar-panel-bg-color;
+  @include mixin.gal-box-shadow(variables.$sidebar-panel-box-shadow);
   border: none;
   &:hover {
-    @include gal-box-shadow($sidebar-panel-hover-box-shadow);
+    @include mixin.gal-box-shadow(variables.$sidebar-panel-hover-box-shadow);
   }
 }
 
 .panel2 {
-  background-color: $sidebar-panel-bg-color;
+  background-color: variables.$sidebar-panel-bg-color;
 }
 
 .panel-heading {
@@ -137,13 +138,13 @@ ul {
 }
 
 .list-group-item {
-  background-color: $list-group-item-bg-color;
+  background-color: variables.$list-group-item-bg-color;
   transition: background-color .5s ease-in-out,box-shadow .5s ease-in-out;
   -moz-transition: background-color .5s ease-in-out,box-shadow .5s ease-in-out;
   -webkit-transition: background-color .5s ease-in-out,box-shadow .5s ease-in-out;
   &:hover {
-    background-color: $list-group-item-hover-bg-color;
-    @include gal-box-shadow($list-group-item-hover-box-shadow);
+    background-color: variables.$list-group-item-hover-bg-color;
+    @include mixin.gal-box-shadow(variables.$list-group-item-hover-box-shadow);
   }
 }
 
@@ -166,15 +167,15 @@ ul {
 }
 
 .label-gal {
-  background-color: $tag-bg-color;
+  background-color: variables.$tag-bg-color;
   margin-right: 5px;
   font-size: 90%;
   > a {
     color: #fff;
   }
   &:hover {
-    background-color: $link-hover-bg-color;
-    @include gal-transition($duration:0.3s);
+    background-color: variables.$link-hover-bg-color;
+    @include mixin.gal-transition($duration:0.3s);
     > a {
       text-decoration: none;
     }
@@ -187,20 +188,20 @@ ul {
   border: 1px solid transparent;
   border-radius: 4px;
   overflow: auto;
-  color: $alert-color;
-  background-color: $alert-bg-color;
+  color: variables.$alert-color;
+  background-color: variables.$alert-bg-color;
 }
 
 .close {
   font-size: 14px;
   font-weight: bold;
-  color: $black2;
+  color: variables.$black2;
   opacity: 1;
   &:hover, &:focus {
-    color: $link-color;
+    color: variables.$link-color;
     text-decoration: none;
     cursor: pointer;
-    @include gal-transition($duration: .25s);
+    @include mixin.gal-transition($duration: .25s);
     opacity: 1;
   }
 }
@@ -215,24 +216,24 @@ button.close {
 
 .form-control {
   vertical-align: middle;
-  border-color: $search-input-bd-color;
+  border-color: variables.$search-input-bd-color;
   outline: 0;
-  -webkit-box-shadow: $search-input-box-shadow;
-  -moz-box-shadow: $search-input-box-shadow;
-  box-shadow: $search-input-box-shadow;
+  -webkit-box-shadow: variables.$search-input-box-shadow;
+  -moz-box-shadow: variables.$search-input-box-shadow;
+  box-shadow: variables.$search-input-box-shadow;
   &:focus {
-    border-color: $search-input-bd-color;
+    border-color: variables.$search-input-bd-color;
   }
 }
 
 // issue 公告
 #gal-issue {
-  background-color: $issue-bg-color;
-  @include gal-box-shadow($box-shadow);
-  @include gal-transition($property:background-color, $duration:0.3s, $timing-function:ease);
+  background-color: variables.$issue-bg-color;
+  @include mixin.gal-box-shadow(variables.$box-shadow);
+  @include mixin.gal-transition($property:background-color, $duration:0.3s, $timing-function:ease);
   &:hover {
-    background-color: $issue-hover-bg-color;
-    @include gal-box-shadow($hover-box-shadow);
+    background-color: variables.$issue-hover-bg-color;
+    @include mixin.gal-box-shadow(variables.$hover-box-shadow);
   }
 }
 
@@ -240,13 +241,13 @@ button.close {
 
 @media (min-width: 768px) {
   [aos^=flip] {
-    @include gal-backface-visibility(hidden);
+    @include mixin.gal-backface-visibility(hidden);
   }
   [aos=flip-up] {
-    @include gal-transform(perspective(2500px) rotateX(-100deg));
+    @include mixin.gal-transform(perspective(2500px) rotateX(-100deg));
   }
   [aos=flip-up].aos-animate {
-    @include gal-transform(perspective(2500px) rotateX(0));
+    @include mixin.gal-transform(perspective(2500px) rotateX(0));
   }
   [aos][aos][aos-easing=ease-out-back], body[aos-easing=ease-out-back] [aos] {
     -webkit-transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
@@ -258,14 +259,14 @@ button.close {
   }
 
   [aos="fade-up"] {
-    @include gal-transform(translate(0px, 100px));
+    @include mixin.gal-transform(translate(0px, 100px));
   }
   [aos^="fade"][aos^="fade"] {
     opacity: 0;
     transition-property: all;
   }
   [aos="fade-up"].aos-animate {
-    @include gal-transform(translate(0px, 0px));
+    @include mixin.gal-transform(translate(0px, 0px));
   }
   [aos][aos][aos-easing="ease-out-back"], body[aos-easing="ease-out-back"] [aos] {
     -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -290,10 +291,10 @@ button.close {
     transition-duration: 3s;
   }
   [aos=flip-right] {
-    @include gal-transform(perspective(2500px) rotateY(100deg));
+    @include mixin.gal-transform(perspective(2500px) rotateY(100deg));
   }
   [aos=flip-right].aos-animate {
-    @include gal-transform(perspective(2500px) rotateY(0));
+    @include mixin.gal-transform(perspective(2500px) rotateY(0));
   }
   [data-aos^="flip-right"][data-aos^="flip-right"] {
     transition-property: all;
@@ -317,7 +318,7 @@ button.close {
   right: 20px;
   height: 40px;
   width: 40px;
-  background-color: $goTop-bg-color;
+  background-color: variables.$goTop-bg-color;
   top: auto;
   display: none;
   z-index: 999;
@@ -327,8 +328,8 @@ button.close {
   border-image: initial;
   cursor: url(../imgs/mouse2.cur), url(../imgs/mouse2.cur), auto;
   &:hover {
-    color: $goTop-hover-color;
-    border-color: $goTop-hover-bd-color;
+    color: variables.$goTop-hover-color;
+    border-color: variables.$goTop-hover-bd-color;
     transition: all 0.3s ease;
   }
   > i {
@@ -344,13 +345,13 @@ button.close {
 #gal-footer {
   display: block;
   text-align: center;
-  color: $footer-color;
+  color: variables.$footer-color;
   padding: 50px;
   a {
-    color: $footer-color;
+    color: variables.$footer-color;
   }
   a:hover {
-    color: $footer-link-color;
+    color: variables.$footer-link-color;
     text-decoration: none;
   }
 }
@@ -367,11 +368,11 @@ button.close {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  @include gal-transition($property: transform, $duration: .2s, $timing-function: ease-out);
-  @include gal-transform(scale(1) rotate(0deg));
+  @include mixin.gal-transition($property: transform, $duration: .2s, $timing-function: ease-out);
+  @include mixin.gal-transform(scale(1) rotate(0deg));
   z-index: 999;
   &:hover {
-    @include gal-transform(scale(1.5) rotate(1deg));
+    @include mixin.gal-transform(scale(1.5) rotate(1deg));
   }
 }
 
@@ -400,12 +401,12 @@ button.close {
     -o-transform-origin: 50% 50% 0px;
     transform-origin: 50% 50% 0px;
     border-radius: 50%;
-    @include gal-transition($duration: 0.4s, $timing-function: ease-out);
-    @include gal-transform(scale(0.1) rotate(-270deg));
+    @include mixin.gal-transition($duration: 0.4s, $timing-function: ease-out);
+    @include mixin.gal-transform(scale(0.1) rotate(-270deg));
   }
   .open .ring {
     opacity: 1;
-    @include gal-transform(scale(1) rotate(0deg));
+    @include mixin.gal-transform(scale(1) rotate(0deg));
   }
   .menuItem {
     color: rgb(238, 238, 238);
@@ -418,12 +419,12 @@ button.close {
     text-align: center;
     width: 80px;
     background-size: 80px;
-    @include gal-box-shadow(rgb(255, 255, 255) 0px 0px 15px);
+    @include mixin.gal-box-shadow(rgb(255, 255, 255) 0px 0px 15px);
     border: 2px solid rgb(181, 148, 148);
     border-radius: 50%;
     border-image: initial;
     &:hover {
-      @include gal-box-shadow(rgb(255, 255, 255) 0px 0px 80px inset);
+      @include mixin.gal-box-shadow(rgb(255, 255, 255) 0px 0px 80px inset);
     }
   }
   .ring a {
@@ -483,17 +484,17 @@ button.close {
       height: 0;
       // width: 6px;
       // height: 10px;
-      background-color: $gray2;
+      background-color: variables.$gray2;
     }
 
     &::-webkit-scrollbar-track {
       border-radius: 10px;
-      background-color: $gray2;
+      background-color: variables.$gray2;
     }
 
     &::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      background-color: $gray2;
+      background-color: variables.$gray2;
     }
 
     table {
@@ -555,4 +556,4 @@ button.close {
   }
 }
 
-@import "highlight";
+@include meta.load-css("highlight");

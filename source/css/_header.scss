@@ -1,16 +1,16 @@
-@import "variables";
-@import "mixin";
+@use "variables";
+@use "mixin";
 
 header#gal-header {
   font-size: 14px;
   border-radius: 0;
-  border-color: $nav-border-color;
-  background-color: $nav-inverse;
-  @include gal-box-shadow($nav-box-shadow);
+  border-color: variables.$nav-border-color;
+  background-color: variables.$nav-inverse;
+  @include mixin.gal-box-shadow(variables.$nav-box-shadow);
   & .navbar-toggle {
     &:hover, &:focus {
       background-color: #333;
-      outline: $nav-button-outline-color auto 5px;
+      outline: variables.$nav-button-outline-color auto 5px;
     }
     .fa-reorder {
       color: #fff;
@@ -21,12 +21,12 @@ header#gal-header {
       color: #fff;
     }
     & > li.current > a {
-      background-color: $purple;
+      background-color: variables.$purple;
     }
     & > li:not(.current) {
       & > a:hover, & > a:focus {
-        @include gal-transition($duration: .25s);
-        background-color: $violet;
+        @include mixin.gal-transition($duration: .25s);
+        background-color: variables.$violet;
       }
     }
   }
